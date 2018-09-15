@@ -20,10 +20,7 @@
 </head>
 <body>
 <div id="NavigationBar">
-    <a href="Login.html">
-        <img id="back" src="Image/back.png"/>
-    </a>
-
+    <img id="back" src="Image/back.png"/>
     <h1>老人位置信息</h1>
     <!--img id="setting" src="Image/setting.png"/-->
     <div id="divMenuButton">
@@ -46,7 +43,7 @@
     <a href="Health.html">
         <div id="Task2">健康状况</div>
     </a>
-    <a href="PersonalInformation.html">
+    <a href="UserInfo.jsp">
         <div id="Task3">个人中心</div>
     </a>
     <div id="Selectbar"></div>
@@ -55,26 +52,8 @@
 
 <script type="text/javascript">
     //老人实时经纬度坐标 <lon,lat>
-    var lon = 114.37;//待修改
-    var lat = 30.54;//待修改
-
-    getLocation();
-    function getLocation()
-    {
-        if (navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        }
-        else { alert("Geolocation is not supported by this browser.");}
-        // else{x.innerHTML="Geolocation is not supported by this browser.";}
-    }
-    function showPosition(position)
-    {
-        //老人实时经纬度坐标 <lon,lat>
-        var lon = position.coords.longitude;//待修改
-        var lat = position.coords.latitude;//待修改
-    }
-
+    var lon = 114.371605;//待修改
+    var lat = 30.544165;//待修改
 
     //电子围栏端点数组 Track
     //位于自定义函数 drawBound()内
@@ -235,10 +214,6 @@
 
     });
 
-</script>
-
-<script>
-    //var x=document.getElementById("demo");
 </script>
 </body>
 </html>

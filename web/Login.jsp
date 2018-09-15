@@ -31,17 +31,16 @@
 <h1>智慧养老</h1>
 <form action="${pageContext.request.contextPath}/servlet/loginServlet" method="post">
     <div>
-        <input id="username" type="text" required="required" placeholder="账号/手机号/邮箱"/>
-        <input id="password" type="password" required="required" placeholder="密码"/>
+        <input id="username" name="ID" type="text" required="required" placeholder="账号"/>
+        <input id="password" type="password" name="password" required="required" placeholder="密码"/>
     </div>
     <div>
-        <input id= "LoginButton" type="submit" value="登录" />
+        <input id="LoginButton" type="submit" value="登录"/>
     </div>
-    <div>
-        <input id="RetrieveButton" type="submit" value="忘记密码" />
-        <input id="RegisterButton" type="submit" value="新用户注册" />
-    </div>
-
 </form>
+<div>
+    <input id="RetrieveButton" type="submit" value="忘记密码"/>
+    <input id="RegisterButton" type="submit" value="新用户注册"/>
+</div>
 </body>
 </html>

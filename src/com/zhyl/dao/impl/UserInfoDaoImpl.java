@@ -10,7 +10,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
     @Override
     public void addUser(UserInfo user) throws Exception {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
-        qr.update("insert user_information VALUES(?,?,?,?,?,?)",user.getID(),user.getPassword(),user.getRealName(),user.getBirthday(),user.getGender(),user.getPhone());
+        qr.update("insert user_information(ID,password,realName,birthday,gender,phone) VALUES(?,?,?,?,?,?)",user.getID(),user.getPassword(),user.getRealName(),user.getBirthday(),user.getGender(),user.getPhone());
     }
 
     @Override

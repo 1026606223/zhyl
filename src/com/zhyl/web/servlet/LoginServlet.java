@@ -35,7 +35,8 @@ public class LoginServlet extends HttpServlet {
             response.addCookie(cookie);
 
             //request.getRequestDispatcher("/UserInfo.jsp").forward(request,response);
-            request.getRequestDispatcher("/Position.html").forward(request,response);
+            //request.getRequestDispatcher("/Position.html").forward(request,response);
+            response.sendRedirect(request.getContextPath()+"/Position.html");
         }
         else{
             String href=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"+request.getContextPath()+"/Login.jsp";
