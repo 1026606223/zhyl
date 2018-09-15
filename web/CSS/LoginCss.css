@@ -1,0 +1,82 @@
+h1{
+    position:absolute;
+    left: 0px;
+    top: 3.6%;
+    width: 100%;
+    height: 8.6%;
+    color: rgba(16, 16, 16, 1);
+    font-size: 60px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}
+#username{
+    position: absolute;
+    left: 7%;
+    top: 25%;
+    width: 86%;
+    height: 5%;
+    opacity: 0.83;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    font-family: Microsoft Yahei;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#password{
+    position:absolute;
+    left: 7%;
+    top: 34.4%;
+    width: 86%;
+    height: 5%;
+    opacity: 0.83;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    font-family: Microsoft Yahei;
+    border:3.5px solid rgba(187, 187, 187, 1);
+}
+#LoginButton{
+    position:absolute;
+    left: 8%;
+    top: 45%;
+    width: 84%;
+    height: 5.6%;
+    line-height: 20px;
+    opacity: 0.92;
+    border-radius: 7px;
+    background-color: rgba(86, 119, 252, 1);
+    text-align: center;
+    box-shadow: 0px 28px 28px 0px rgba(0, 0, 0, 0.24);
+    color: rgba(255, 255, 255, 1);
+    font-size: 55px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}
+#RetrieveButton{
+    position:absolute;
+    left: 6%;
+    top: 60%;
+    width: 28%;
+    height: 5%;
+    opacity: 0.83;
+    border-radius: 14px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 40px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#RegisterButton{
+    position:absolute;
+    left: 66%;
+    top: 60%;
+    width: 28%;
+    height: 5%;
+    opacity: 0.83;
+    border-radius: 14px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 40px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}

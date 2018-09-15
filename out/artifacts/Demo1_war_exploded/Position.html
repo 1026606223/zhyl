@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老人位置</title>
+
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="CSS/PositionCss.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- 引入JS文件 -->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ePE7rCArzx16QdvoIoWKR9SMSI6GgwjL"></script>
+    <!--引用鼠标绘制工具-->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+</head>
+<body>
+<div id="NavigationBar">
+    <a href="Login.html">
+        <img id="back" src="Image/back.png"/>
+    </a>
+
+    <h1>老人位置信息</h1>
+    <!--img id="setting" src="Image/setting.png"/-->
+    <div id="divMenuButton">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        <div class="subMenu">
+            <ul>
+                <li>编辑安全区域</li>
+                <li>历史轨迹查询</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="Middle"></div>
+
+<div id="TaskBar">
+    <div id="Task1">老人位置</div>
+    <a href="Health.html">
+        <div id="Task2">健康状况</div>
+    </a>
+    <a href="PersonalInformation.html">
+        <div id="Task3">个人中心</div>
+    </a>
+    <div id="Selectbar"></div>
+</div>
+
+
+<script type="text/javascript">
+    //老人实时经纬度坐标 <lon,lat>
+    var lon = 114.37;//待修改
+    var lat = 30.54;//待修改
+
+    getLocation();
+    function getLocation()
+    {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else { alert("Geolocation is not supported by this browser.");}
+        // else{x.innerHTML="Geolocation is not supported by this browser.";}
+    }
+    function showPosition(position)
+    {
+        //老人实时经纬度坐标 <lon,lat>
+        var lon = position.coords.longitude;//待修改
+        var lat = position.coords.latitude;//待修改
+    }
+
+
+    //电子围栏端点数组 Track
+    //位于自定义函数 drawBound()内
+
+    //轨迹数据url
+    var trackUrl = 'http:/xxx.xxx.xxx.xxx/track.js';
+
+
+
+
+
+
+    // 创建地图实例
+    var map = new BMap.Map("Middle");
+    map.enableScrollWheelZoom();
+    // 创建点坐标
+    var centralPoint = new BMap.Point(lon, lat);
+    // 初始化地图，设置中心点坐标和地图级别
+    map.centerAndZoom(centralPoint, 15);
+
+    /******************老人所处经纬度接口（WGS84）*******************/
+    var manPoint = new BMap.Point(lon, lat);
+    /****************************************************************/
+
+    /*******************老人行为轨迹接口（JSON）*********************/
+    var manTrace = trackUrl;
+    /****************************************************************/
+    // 自定义函数，将老人所处经纬度添加到地图并显示
+
+    addMarker(manPoint);// 创建并显示老人当前经纬度
+    showTrack();
+    function showTrack() {
+        $.get('127.0.0.1:8080/json/WuhanEPSG3395.json', function (TrackJson) {
+
+            echarts.registerMap('Track', TrackJson);
+            option = {
+                series: [{
+                    type: 'polygon',
+                    coordinateSystem: 'bmap',
+                    data: TrackJson,
+
+                }]
+            };
+
+            myChart.setOption(option);
+        });
+    }
+    function addMarker(point) {  // 创建图标对象
+        var myIcon = new BMap.Icon("test.png", new BMap.Size(26, 32), {
+            anchor: new BMap.Size(13, 16),// 当标注显示在地图上时，其所指向的地理位置距离图标左上角
+            // 各偏移10像素和25像素，该位置即是图标中央下端的尖角位置
+        });
+        // 创建标注对象并添加到地图
+        var marker = new BMap.Marker(manPoint, { icon: myIcon });
+        map.addOverlay(marker);
+    }
+
+
+    // 定义一个控件类,即function
+    function controlDrawBound() {
+        // 默认停靠位置和偏移量
+        this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+        this.defaultOffset = new BMap.Size(10, 10);
+    }
+
+    // 通过JavaScript的prototype属性继承于BMap.Control
+    controlDrawBound.prototype = new BMap.Control();
+
+    // 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+    // 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+    controlDrawBound.prototype.initialize = function (map) {
+        // 创建一个DOM元素
+        var div = document.createElement("div");
+        // 添加文字说明
+        div.appendChild(document.createTextNode("绘制安全区域"));
+        // 设置样式
+        div.style.cursor = "pointer";
+        div.style.border = "1px solid gray";
+        div.style.backgroundColor = "white";
+        // 绑定事件,点击后调用drawBound()绘制安全区域
+        div.onclick = function (e) {
+            drawBound();
+        }
+        // 添加DOM元素到地图中
+        map.getContainer().appendChild(div);
+        // 将DOM元素返回
+        return div;
+    }
+    // 创建控件
+    var contral = new controlDrawBound();
+    // 添加到地图当中
+    map.addControl(contral);
+
+    function drawBound() {
+        //鼠标绘制完成回调方法   获取各个点的经纬度
+        var overlays = [];
+        var overlaycomplete = function (e) {
+            overlays.push(e.overlay);
+            var Track = e.overlay.getPath();//Array<Point> 返回多边型的点数组
+            for (var i = 0; i < Track.length; i++) {
+                console.log("lng:" + Track[i].lng + "\n lat:" + Track[i].lat);
+            }
+        };
+        var styleOptions = {
+            strokeColor: "red",    // 边线颜色
+            fillColor: "red",      // 填充颜色，当参数为空时，圆形将没有填充效果，
+            strokeWeight: 3,       // 边线的宽度，以像素为单位
+            strokeOpacity: 0.8,    // 边线透明度，取值范围0 ~ 1
+            fillOpacity: 0.6,      // 填充的透明度，取值范围0 ~ 1
+            strokeStyle: 'solid'   // 边线的样式，solid或dashed
+        }
+        //实例化鼠标绘制工具
+        var drawingManager = new BMapLib.DrawingManager(map, {
+            isOpen: false, //是否开启绘制模式
+            enableDrawingTool: true, //是否显示工具栏
+            drawingMode: BMAP_DRAWING_POLYGON,//绘制模式-多边形
+            /*
+            共计五种画图模式，可自由添加
+            1.BMAP_DRAWING_MARKER 画点
+            2.BMAP_DRAWING_CIRCLE 画圆
+            3.BMAP_DRAWING_POLYLINE 画线
+            4.BMAP_DRAWING_POLYGON 画多边形
+            5.BMAP_DRAWING_RECTANGLE 画矩形
+            */
+            drawingToolOptions: {
+                anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+                offset: new BMap.Size(5, 5), //偏离值
+                drawingModes: [
+                    BMAP_DRAWING_POLYGON
+                ]
+            },
+            polygonOptions: styleOptions //多边形的样式
+        });
+
+        //添加鼠标绘制工具监听事件，用于获取绘制结果
+        drawingManager.addEventListener('overlaycomplete', overlaycomplete);
+        function clearAll() {
+            for (var i = 0; i < overlays.length; i++) {
+                map.removeOverlay(overlays[i]);
+            }
+            overlays.length = 0
+        }
+    }
+</script>
+
+<!--下拉菜单-->
+<script type="text/javascript">
+    $(function () {
+
+        $("#divMenuButton").hover(function () {
+
+            $(this).find(".subMenu").show();
+
+        }, function () {
+
+            $(this).find(".subMenu").hide();
+        });
+
+    });
+
+</script>
+
+<script>
+    //var x=document.getElementById("demo");
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+h1{
+    position:absolute;
+    left: 0px;
+    top: 3.6%;
+    width: 100%;
+    height: 8.6%;
+    color: rgba(16, 16, 16, 1);
+    font-size: 60px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}
+#TextBox{
+    position: absolute;
+    left: 0px;
+    top: 15.6%;
+    width: 100%;
+    height: 36.25%;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    border: 3.5px solid rgba(255, 255, 255, 1);
+    opacity: 0.83;
+}
+#p1{
+    position: absolute;
+    left: 4.5%;
+    top: 8.75%;
+    width: 50%;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+    font-family: Roboto;
+}
+#PhoneNumber{
+    position: absolute;
+    left: 390px;
+    top:15%;
+    width: 45%;
+    height:50px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p2{
+    position: absolute;
+    left: 4.5%;
+    top: 23.75%;
+    width: 50%;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+    font-family: Roboto;
+}
+#IdCode{
+    position: absolute;
+    left: 390px;
+    top:30%;
+    width: 45%;
+    height:50px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 16px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p3{
+    position: absolute;
+    left: 4.5%;
+    top: 38.75%;
+    width: 50%;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+    font-family: Roboto;
+}
+#NewPassword{
+    position: absolute;
+    left: 390px;
+    top:45%;
+    width: 45%;
+    height:50px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p4{
+    position: absolute;
+    left: 4.5%;
+    top: 53.75%;
+    width: 50%;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+    font-family: Roboto;
+}
+#NewPasswordConf{
+    position: absolute;
+    left: 390px;
+    top:60%;
+    width: 45%;
+    height:50px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p5{
+    position: absolute;
+    left: 4.5%;
+    top: 68.75%;
+    width: 50%;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+    font-family: Roboto;
+}
+#EquipmentNumber{
+    position: absolute;
+    left: 390px;
+    top:75%;
+    width: 45%;
+    height:50px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#LoginButton{
+    position:absolute;
+    left: 8%;
+    top: 60%;
+    width: 84%;
+    height: 5.6%;
+    line-height: 20px;
+    opacity: 0.92;
+    border-radius: 7px;
+    background-color: rgba(86, 119, 252, 1);
+    text-align: center;
+    box-shadow: 0px 28px 28px 0px rgba(0, 0, 0, 0.24);
+    color: rgba(255, 255, 255, 1);
+    font-size: 55px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="zhyl">
+    <output-path>$PROJECT_DIR$/out/artifacts/zhyl</output-path>
+    <root id="archive" name="zhyl.war">
+      <element id="artifact" artifact-name="Demo1:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/artifacts" />
+    </root>
+  </artifact>
+</component>

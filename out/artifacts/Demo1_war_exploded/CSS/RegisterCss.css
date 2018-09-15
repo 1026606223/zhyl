@@ -1,0 +1,250 @@
+h1{
+    position:absolute;
+    left: 0px;
+    top: 3.6%;
+    width: 100%;
+    height: 8.6%;
+    color: rgba(16, 16, 16, 1);
+    font-size: 60px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}
+#TextBox{
+    position: absolute;
+    left: 0px;
+    top: 15.6%;
+    width: 100%;
+    height: 58%;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    border: 3.5px solid rgba(255, 255, 255, 1);
+    opacity: 0.83;
+}
+#p1{
+    position: absolute;
+    left: 4.5%;
+    top: 10%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#ID{
+    position: absolute;
+    left: 390px;
+    top:8%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p2{
+    position: absolute;
+    left: 4.5%;
+    top: 20%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#Password{
+    position: absolute;
+    left: 390px;
+    top:18%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p3{
+     position: absolute;
+     left: 4.5%;
+     top: 30%;
+     width: 50%;
+     height:20px;
+     color: rgba(0, 0, 0, 0.87);
+     font-size: 50px;
+     text-align: left;
+ }
+#EquipmentNumber{
+    position: absolute;
+    left: 390px;
+    top:28%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p4{
+    position: absolute;
+    left: 4.5%;
+    top: 40%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#PhoneNumber{
+    position: absolute;
+    left: 390px;
+    top:38%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p5{
+    position: absolute;
+    left: 4.5%;
+    top: 50%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#Name{
+    position: absolute;
+    left: 390px;
+    top:48%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p6{
+    position: absolute;
+    left: 4.5%;
+    top: 60%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#Sex{
+    position: absolute;
+    left: 390px;
+    top:58%;
+    width: 10%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    line-height: 0px;
+    text-align-all: 0px;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p7{
+    position: absolute;
+    left: 4.5%;
+    top: 70%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#Birthday{
+    position: absolute;
+    left: 390px;
+    top:68%;
+    width: 45%;
+    height:70px;
+    font-size: 50px;
+}
+#year{
+    position: absolute;
+    left:0px;
+    width: 35%;
+    height: 70px;
+    font-size: 50px;
+    color: rgba(136, 136, 136, 1);
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#month{
+    position: absolute;
+    left:47.5%;
+    width: 20%;
+    height: 70px;
+    font-size: 50px;
+    color: rgba(136, 136, 136, 1);
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#bar1{
+    position: absolute;
+    left: 35%;
+    width: 12.5%;
+    height: 70px;
+    font-size: 70px;
+    color: rgba(136, 136, 136, 1);
+}
+#bar2{
+    position: absolute;
+    left: 67.5%;
+    width: 12.5%;
+    height: 70px;
+    font-size: 70px;
+    color: rgba(136, 136, 136, 1);
+}
+#day{
+    position: absolute;
+    left:80%;
+    width: 20%;
+    height: 70px;
+    font-size: 50px;
+    color: rgba(136, 136, 136, 1);
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#p8{
+    position: absolute;
+    left: 4.5%;
+    top: 80%;
+    width: 50%;
+    height:20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 50px;
+    text-align: left;
+}
+#IdCode{
+    position: absolute;
+    left: 390px;
+    top:78%;
+    width: 45%;
+    height:70px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 50px;
+    text-align: left;
+    border: 3.5px solid rgba(187, 187, 187, 1);
+}
+#RegisterButton{
+    position:absolute;
+    left: 8%;
+    top: 81.75%;
+    width: 84%;
+    height: 5.6%;
+    line-height: 20px;
+    opacity: 0.92;
+    border-radius: 7px;
+    background-color: rgba(86, 119, 252, 1);
+    text-align: center;
+    box-shadow: 0px 28px 28px 0px rgba(0, 0, 0, 0.24);
+    color: rgba(255, 255, 255, 1);
+    font-size: 55px;
+    text-align: center;
+    font-family: Microsoft Yahei;
+}
