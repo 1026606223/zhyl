@@ -17,6 +17,7 @@
     <!--引用鼠标绘制工具-->
     <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
     <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+    <script src="JS/DataTransfer.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="NavigationBar">
@@ -153,6 +154,7 @@
         var overlaycomplete = function (e) {
             overlays.push(e.overlay);
             var Track = e.overlay.getPath();//Array<Point> 返回多边型的点数组
+            setFenceTrack(Track,"LCh");
             for (var i = 0; i < Track.length; i++) {
                 console.log("lng:" + Track[i].lng + "\n lat:" + Track[i].lat);
             }
