@@ -12,7 +12,7 @@ function setFenceTrack(PointsArray,ID) {
     //console.log(JSON.stringify(json));
     $.ajax(
         {
-            url:"http://localhost:8080/demo1/setFenceTrack",
+            url:"http://120.79.209.190:8080/zhyl/setFenceTrack",
             type:"POST",
             data:JSON.stringify(json),
             contentType : "application/json",
