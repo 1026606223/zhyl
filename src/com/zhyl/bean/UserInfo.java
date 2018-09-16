@@ -12,6 +12,15 @@ public class UserInfo implements Serializable {
     private Date birthday;
     private String gender;
     private String phone;
+    private String Equip_ID;
+
+    public String getEquip_ID() {
+        return Equip_ID;
+    }
+
+    public void setEquip_ID(String equip_ID) {
+        Equip_ID = equip_ID;
+    }
 
     public String getPhone() {
         return phone;

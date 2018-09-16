@@ -39,8 +39,9 @@
     </div>
 </form>
 <div>
-    <input id="RetrieveButton" type="submit" value="忘记密码"/>
-    <input id="RegisterButton" type="submit" value="新用户注册"/>
+    <a href="Retrieve.html"><input id="RetrieveButton" type="submit" value="忘记密码"/></a>
+
+    <a href="Register.jsp"><input id="RegisterButton" type="submit" value="新用户注册"/></a>
 </div>
 </body>
 </html>

@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
         uifo.setBirthday(date);
-
+        uifo.setEquip_ID(request.getParameter("EquipmentNumber"));
         Service svc = new ServiceImpl();
         try {
             svc.register(uifo);

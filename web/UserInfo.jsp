@@ -43,6 +43,12 @@
     ">${uifo.ID}</div>
     <img id="key" src="Image/key.png"/>
     <div id="uid">设备号</div>
+    <div style=" position:absolute;
+    top: 30%;
+    right: 0%;
+    color: rgba(0,0,0,0.87);
+    font-size: 70px;
+    ">${uifo.equip_ID}</div>
     <img id="quit" src="Image/quit.png"/>
     <div id="qt" onclick="logout()">退出登录</div>
 </div>
